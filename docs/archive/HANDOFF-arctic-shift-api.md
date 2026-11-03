@@ -1,3 +1,9 @@
+> **Historical record.** Written during the Arctic Shift API period, before
+> the offline-dump route was adopted and before BLK and JPM were settled as the
+> immaterial stocks — this document still names GS and WFC. Superseded by
+> `docs/METHODOLOGY.md` §3. Retained as the primary record of the six falsified
+> hypotheses about the API failures.
+
 # Handoff — Reddit retrieval problem
 
 Context for a fresh session. Project: UTS capstone, "Leveraging News and Media
