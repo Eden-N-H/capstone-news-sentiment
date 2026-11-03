@@ -1,0 +1,15 @@
+scope,n,majority_baseline,price_only,price_plus_sentiment,difference_pp,ci_low_pp,ci_high_pp,mcnemar_p,price_only_wins,sentiment_wins,significant,category,model_b
+AAPL,558,0.5215,0.4982,0.5215,2.33,-2.87,7.71,0.4175,103,116,False,material,
+AAPL_noise_control,558,0.5215,0.4982,0.4803,-1.79,-6.81,3.23,0.5287,107,97,False,material,price_plus_noise
+TTWO,558,0.509,0.4946,0.4659,-2.87,-7.53,1.79,0.2471,92,76,False,material,
+TTWO_noise_control,558,0.509,0.4946,0.4785,-1.61,-6.63,3.41,0.5783,108,99,False,material,price_plus_noise
+GOOG,558,0.5,0.5054,0.4839,-2.15,-6.81,2.69,0.4149,97,85,False,material,
+GOOG_noise_control,558,0.5,0.5054,0.4803,-2.51,-7.35,2.33,0.3456,102,88,False,material,price_plus_noise
+NVDA,558,0.5269,0.4928,0.4749,-1.79,-6.27,2.87,0.4876,89,79,False,material,
+NVDA_noise_control,558,0.5269,0.4928,0.4552,-3.76,-8.6,1.08,0.1519,108,87,False,material,price_plus_noise
+BLK,558,0.5125,0.5448,0.4875,-5.73,-9.68,-1.79,0.0055,79,47,True,immaterial,
+BLK_noise_control,558,0.5125,0.5448,0.5036,-4.12,-7.89,-0.36,0.0433,71,48,True,immaterial,price_plus_noise
+JPM,558,0.5072,0.5484,0.4713,-7.71,-13.26,-2.15,0.0079,147,104,True,immaterial,
+JPM_noise_control,558,0.5072,0.5484,0.4516,-9.68,-14.7,-4.66,0.0003,136,82,True,immaterial,price_plus_noise
+ALL TICKERS POOLED,3348,0.5128,0.514,0.4842,-2.99,-4.93,-1.02,0.003,607,507,True,,
+ALL TICKERS POOLED (noise control),3348,0.5128,0.514,0.4749,-3.91,-5.85,-1.94,0.0001,632,501,True,,price_plus_noise

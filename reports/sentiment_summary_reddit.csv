@@ -1,0 +1,7 @@
+ticker,source,items,scored,mean_sentiment_per_document,pct_positive,pct_negative,text_column
+AAPL,reddit,14899,14899,-0.0382,19.7,22.3,selftext
+TTWO,reddit,503,503,-0.0198,20.3,17.5,selftext
+GOOG,reddit,7379,7379,-0.0823,15.3,28.1,selftext
+NVDA,reddit,6399,6399,-0.0119,22.6,21.2,selftext
+BLK,reddit,1120,1120,-0.0332,17.5,22.6,selftext
+JPM,reddit,2106,2106,-0.1169,17.3,35.2,selftext

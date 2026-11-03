@@ -1,0 +1,11 @@
+comparison,model_a,model_b,acc_a,acc_b,n,diff_pp,ci_low_pp,ci_high_pp,p,price_only,price_plus_news,family,price_plus_reddit,price_plus_noise,price_plus_both,price_plus_noise10,target,sentiment_set,reddit_weighted
+price_plus_news vs price_only,price_only,price_plus_news,0.5279,0.5051,3336,-2.28,-4.05,-0.51,0.0133,0.5279,0.5051,gbm,,,,,open_to_close,level,False
+price_plus_reddit vs price_only,price_only,price_plus_reddit,0.5279,0.4931,3336,-3.48,-5.28,-1.68,0.0002,0.5279,,gbm,0.4931,,,,open_to_close,level,False
+price_plus_noise vs price_only,price_only,price_plus_noise,0.5279,0.5177,3336,-1.02,-2.97,0.93,0.314,0.5279,,gbm,,0.5177,,,open_to_close,level,False
+price_plus_news vs price_plus_noise,price_plus_noise,price_plus_news,0.5177,0.5051,3336,-1.26,-3.3,0.81,0.2408,,0.5051,gbm,,0.5177,,,open_to_close,level,False
+price_plus_reddit vs price_plus_noise,price_plus_noise,price_plus_reddit,0.5177,0.4931,3336,-2.46,-4.53,-0.42,0.0187,,,gbm,0.4931,0.5177,,,open_to_close,level,False
+price_plus_reddit vs price_plus_news,price_plus_news,price_plus_reddit,0.5051,0.4931,3336,-1.2,-3.18,0.72,0.2383,,0.5051,gbm,0.4931,,,,open_to_close,level,False
+price_plus_both vs price_only,price_only,price_plus_both,0.5279,0.4973,3336,-3.06,-4.98,-1.11,0.0022,0.5279,,gbm,,,0.4973,,open_to_close,level,False
+price_plus_both vs price_plus_noise10,price_plus_noise10,price_plus_both,0.4967,0.4973,3336,0.06,-2.01,2.16,0.9778,,,gbm,,,0.4973,0.4967,open_to_close,level,False
+price_plus_both vs price_plus_news,price_plus_news,price_plus_both,0.5051,0.4973,3336,-0.78,-2.52,0.96,0.4088,,0.5051,gbm,,,0.4973,,open_to_close,level,False
+price_plus_both vs price_plus_reddit,price_plus_reddit,price_plus_both,0.4931,0.4973,3336,0.42,-1.35,2.22,0.6696,,,gbm,0.4931,,0.4973,,open_to_close,level,False

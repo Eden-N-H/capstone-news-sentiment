@@ -1,0 +1,7 @@
+ticker,category,sessions,sessions_with_news,pct_covered,articles,mean_sentiment_per_session,corr_next_day_return
+AAPL,material,1258,695,55.2,8181,-0.0869,-0.0376
+TTWO,material,1258,656,52.1,1250,0.0516,0.0118
+GOOG,material,1258,1244,98.9,10811,0.0552,0.0385
+NVDA,material,1258,1064,84.6,9215,0.0716,0.0204
+BLK,immaterial,1258,561,44.6,2152,0.0001,-0.0474
+JPM,immaterial,1258,676,53.7,3114,-0.0072,-0.0489

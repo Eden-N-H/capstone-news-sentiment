@@ -1,0 +1,36 @@
+# Raw and derived data — large, and reproducible from the sources in README
+fnspid_raw/
+reddit_dumps/
+data/
+*.jsonl
+*.zst
+*.part
+
+# Model weights cached by transformers
+.cache/
+
+# Logs
+*.log
+nohup.out
+
+# Checkpoints and locks — process state, not results
+reports/_*checkpoint.json
+reports/_*.lock
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/
+
+# reports/ is otherwise TRACKED on purpose: those files are the results, and
+# several of them are what the report's tables are quoted from. The per-arm
+# prediction files (reports/tuned_preds_*.csv) are a few MB each and well
+# inside GitHub's limits; if that ever changes, exclude them here rather than
+# dropping the whole directory.

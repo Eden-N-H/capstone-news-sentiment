@@ -1,0 +1,4 @@
+comparison,n,price_only,price_plus_sentiment,diff_pp,ci_low_pp,ci_high_pp,p,family,price_plus_noise,target,sentiment_set
+price_plus_sentiment vs price_only,3336,0.497,0.5018,0.48,-1.35,2.34,0.6336,gbm,,close_to_close,level
+price_plus_noise vs price_only,3336,0.497,,0.27,-1.68,2.22,0.8112,gbm,0.4997,close_to_close,level
+price_plus_sentiment vs price_plus_noise,3336,,0.5018,0.21,-1.89,2.25,0.8646,gbm,0.4997,close_to_close,level

@@ -1,0 +1,7 @@
+ticker,source,items,scored,mean_sentiment_per_document,pct_positive,pct_negative
+AAPL,news,8181,8181,-0.0643,32.8,37.7
+TTWO,news,1250,1250,0.0,41.7,31.4
+GOOG,news,10811,10811,0.0503,41.5,26.6
+NVDA,news,9217,9217,0.0919,48.7,25.9
+BLK,news,2152,2152,-0.1054,24.7,35.7
+JPM,news,3114,3114,0.0069,30.9,25.4

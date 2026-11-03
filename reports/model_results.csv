@@ -1,0 +1,6 @@
+ticker,category,model,n,folds,news_coverage_pct,rmse,mae,directional_accuracy
+GOOG,material,price_only,558,9,98.9,0.02208607867655288,0.01639692455282047,0.517921146953405
+GOOG,material,price_plus_sentiment,558,9,98.9,0.022541218594986326,0.016785316686281734,0.492831541218638
+GOOG,material,baseline_zero,558,0,98.9,0.021395483485814947,0.01582995625308522,0.0
+GOOG,material,baseline_previous,558,0,98.9,0.030343450840998723,0.02314294219507665,0.507168458781362
+GOOG,material,baseline_majority,558,0,98.9,,,0.5

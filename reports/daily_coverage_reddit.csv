@@ -1,0 +1,7 @@
+ticker,category,sessions,sessions_with_news,pct_covered,articles,source,mean_sentiment_per_session,corr_next_day_return
+AAPL,material,1258,1227,97.5,14899,reddit,-0.0397,-0.0097
+TTWO,material,1258,238,18.9,501,reddit,-0.0293,-0.0713
+GOOG,material,1258,1130,89.8,7379,reddit,-0.0658,0.0158
+NVDA,material,1258,1020,81.1,6393,reddit,-0.0336,0.0432
+BLK,immaterial,1258,420,33.4,1120,reddit,-0.0715,0.0118
+JPM,immaterial,1258,707,56.2,2106,reddit,-0.1156,0.0091
