@@ -164,7 +164,9 @@ relationship *within* them.
 `reports/tuned_results_all_runs.csv`. Canonical runs: gradient boosting
 `2026-10-14T11:25:56` (n = 3,336) and LSTM `2026-09-28T14:29:25` (n = 3,294).
 
-Majority-class baseline **52.49%**.
+Majority-class baselines: **52.49%** (gradient boosting, n = 3,336) and
+**52.25%** (LSTM, n = 3,294). The two families pool a different number of
+sessions, so one shared baseline would be wrong for one of them.
 
 | Arm | Features | Gradient boosting | LSTM |
 |---|---|---|---|

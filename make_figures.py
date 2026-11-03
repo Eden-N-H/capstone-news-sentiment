@@ -283,7 +283,8 @@ def fig02(outdir):
     fig.legend(handles=[Patch(facecolor=NEUTRAL, hatch="///", edgecolor=SURFACE,
                               label="Random-feature control")],
                loc="lower center", bbox_to_anchor=(0.5, -0.14))
-    fig.suptitle("Neither family clears its own baseline", x=0.02, ha="left",
+    fig.suptitle("Neither family meaningfully beats its majority baseline",
+                 x=0.02, ha="left",
                  color=INK, fontsize=10.5, y=1.04)
     finish(fig, 2, "arm_accuracies", outdir, pd.DataFrame(out))
 
@@ -331,10 +332,12 @@ def fig03(outdir):
         ax.set_title(title, loc="left", color=INK, fontsize=9.5, pad=8)
         ax.set_ylim(-0.14, 0.31)
     axes[0].set_ylabel("Correlation with return")
-    axes[0].legend(loc="upper left", ncol=2, bbox_to_anchor=(0, 1.0))
+    fig.legend(handles=[Patch(facecolor=BLUE, label="News"),
+                        Patch(facecolor=ORANGE, label="Reddit")],
+               loc="lower center", bbox_to_anchor=(0.5, -0.13), ncol=2)
     fig.suptitle("Sentiment tracks the current session, not the next one",
                  x=0.02, ha="left", color=INK, fontsize=10.5, y=1.04)
-    fig.text(0.02, -0.07, "*** p<0.001   ** p<0.01   * p<0.05", fontsize=7,
+    fig.text(0.02, -0.21, "*** p<0.001   ** p<0.01   * p<0.05", fontsize=7,
              color=MUTED, ha="left")
     finish(fig, 3, "sameday_vs_nextday", outdir, pd.DataFrame(out))
 
@@ -501,7 +504,7 @@ def fig06(outdir):
     fig.legend(handles=[Patch(facecolor=RED, label="Negative"),
                         Patch(facecolor=NEUTRAL, label="Neutral (|score| ≤ 0.1)"),
                         Patch(facecolor=BLUE, label="Positive")],
-               loc="lower center", bbox_to_anchor=(0.5, -0.1), ncol=3)
+               loc="lower center", bbox_to_anchor=(0.5, -0.22), ncol=3)
     fig.suptitle("FinBERT is far less decisive on Reddit than on news",
                  x=0.02, ha="left", color=INK, fontsize=10.5, y=1.02)
     finish(fig, 6, "sentiment_distribution", outdir, pd.DataFrame(out))
@@ -556,13 +559,12 @@ def fig07(outdir):
     fig.legend(handles=[Patch(facecolor=ORANGE, label="Significant at p < 0.05"),
                         Patch(facecolor=NEUTRAL, hatch="///", edgecolor=SURFACE,
                               label="Not significant")],
-               loc="lower center", bbox_to_anchor=(0.5, -0.12), ncol=2)
+               loc="lower center", bbox_to_anchor=(0.5, -0.26), ncol=2)
     fig.suptitle("The same arm, judged against two comparators",
                  x=0.02, ha="left", color=INK, fontsize=10.5, y=1.03)
-    fig.text(0.02, -0.19,
-             "Early-exploration runs recorded in docs/METHODOLOGY.md §6. On real data a price-only comparison "
-             "calls sentiment harmful;\non synthetic noise it calls the same arm helpful. Only the matched-noise "
-             "comparison is right both times.",
+    fig.text(0.02, -0.40,
+             "Early-exploration runs; see Appendix. On real data a price-only comparison calls sentiment harmful; "
+             "on synthetic\nnoise it calls the same arm helpful. Only the matched-noise comparison is right both times.",
              fontsize=7, color=MUTED, ha="left")
     finish(fig, 7, "judged_two_ways", outdir, d)
 
@@ -606,8 +608,8 @@ def fig08(outdir):
         # zero: news peaks at lag 0, but Reddit peaks at lag -1, which is the
         # more interesting half of this figure.
         k = int(np.nanargmax(mean))
-        ax.annotate(f"{mean[k]:+.3f}", (lags[k], mean[k]),
-                    xytext=(10, 6 if src == "news" else -15),
+        ax.annotate(f"{src.capitalize()} {mean[k]:+.3f}", (lags[k], mean[k]),
+                    xytext=(10, 8 if src == "news" else -17),
                     textcoords="offset points", ha="left", fontsize=8,
                     color=colour, fontweight="bold")
         for tk, vals in per.items():
@@ -619,14 +621,22 @@ def fig08(outdir):
     ax.set_xticklabels(["\u22122", "\u22121", "0", "+1", "+2"], fontsize=9,
                        color=INK)
     ax.annotate("same session", (0, 1.0), xycoords=("data", "axes fraction"),
-                xytext=(0, -12), textcoords="offset points", ha="center",
-                fontsize=7, color=MUTED)
+                xytext=(0, -10), textcoords="offset points", ha="center",
+                fontsize=7, color=MUTED,
+                bbox=dict(facecolor=SURFACE, edgecolor="none", pad=1.5))
     ax.set_xlabel("Lag between sentiment and return (sessions)")
     ax.set_ylabel("Correlation (mean across tickers)")
-    ax.legend(loc="upper right", ncol=2)
+    # Legend outside the axes: when both series peak at the same lag their
+    # labels stack, and in-plot they then collide with the legend as well.
+    fig.legend(handles=[Line2D([], [], color=BLUE, lw=2, marker="o", ms=7,
+                               label="News"),
+                        Line2D([], [], color=ORANGE, lw=2, marker="o", ms=7,
+                               label="Reddit")],
+               loc="lower center", bbox_to_anchor=(0.5, -0.14), ncol=2)
+    ax.margins(y=0.16)
     ax.set_title("Neither platform's sentiment leads the market",
                  loc="left", color=INK, pad=8)
-    fig.text(0.02, -0.06,
+    fig.text(0.02, -0.22,
              "Faint lines are individual tickers. Negative lags correlate sentiment with earlier returns; "
              "positive lags with later ones.",
              fontsize=7, color=MUTED, ha="left")
@@ -690,7 +700,7 @@ def fig09(outdir):
                         Line2D([], [], marker="o", lw=0, ms=7, color=ORANGE,
                                label="Reddit")],
                loc="lower center", bbox_to_anchor=(0.5, -0.17), ncol=2)
-    fig.suptitle("Stock type does not separate on any metric",
+    fig.suptitle("Too few stocks per category to distinguish stock type (4 vs 2)",
                  x=0.02, ha="left", color=INK, fontsize=10.5, y=1.04)
     fig.text(0.02, -0.26, "Black bars are category means across both platforms.",
              fontsize=7, color=MUTED, ha="left")
